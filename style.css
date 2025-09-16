@@ -1,12 +1,17 @@
-/* Reset & basics */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Quicksand", serif;
 }
 
-/* Navbar */
+body {
+  background-color: #e6e6e6;
+  font-family: "Lora", "Quicksand" sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   position: absolute;
   top: 0;
@@ -19,78 +24,32 @@
   z-index: 10;
 }
 
-.logo {
-  color: #fff;
+.navbar > a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-family: "Quicksand";
+  font-size: 1.2rem;
   font-weight: bold;
+  color: #57422a;
 }
 
 .menu {
-  display: flex;
   list-style: none;
-  gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
 }
 
 .menu li a {
-  color: #9b5527;
   text-decoration: none;
-  font-weight: 600;
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.2rem;
-  transition: color 0.3s;
+  font-family: "Quicksand";
+  font-size: 1rem;
+  color: #57422a;
 }
 
 .menu li a:hover {
-  color: #3b82f6; /* optional hover effect */
-}
-
-/* Push last item (Contact) to the right */
-.menu li.right {
-  margin-left: auto;
-}
-
-/* Hamburger menu */
-.toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-}
-
-/* Hero image */
-.hero img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .menu {
-    position: absolute;
-    top: 70px;
-    right: -100%;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    text-align: center;
-    gap: 20px;
-    padding: 20px 0;
-    transition: right 0.3s;
-  }
-
-  .menu.active {
-    right: 0;
-  }
-
-  .toggle {
-    display: flex;
-  }
+  text-decoration: underline;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #9b5527;
+  transition: 0.3s ease;
 }
