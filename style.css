@@ -12,6 +12,12 @@ body {
   align-items: center;
 }
 
+.logo img{
+  display: flex;
+  position: relative;
+  height: 50px;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -25,14 +31,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 30px 50px;
   z-index: 10;
 }
 
 .navbar > a {
   text-decoration: none;
   font-family: "Quicksand";
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: bold;
   color: #57422a;
 }
@@ -75,4 +81,8 @@ body {
 
 .menu li a:hover::after {
   transform: scaleX(1); /* reveal the underline on hover */
+}
+
+.container > img {
+  position: relative;
 }
