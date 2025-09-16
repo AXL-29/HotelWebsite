@@ -43,13 +43,32 @@ body {
   text-decoration: none;
   font-family: "Quicksand";
   font-size: 1rem;
-  color: #57422a;
+  font-weight: 400;
+  color: #9b5527;
+  position: relative; /* needed for the pseudo-element */
+  transition: font-weight 0.3s ease, color 0.3s ease;
 }
 
 .menu li a:hover {
-  text-decoration: underline;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #9b5527;
-  transition: 0.3s ease;
 }
+
+/* Create a custom underline */
+.menu li a::after {
+  content: "";
+  position: absolute;
+  left: 25%; /* center the underline */
+  bottom: 0;
+  width: 50%; /* half the width of the text */
+  height: 2px; /* thickness of the underline */
+  background-color: #9b5527;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.menu li a:hover::after {
+  transform: scaleX(1); /* reveal the underline on hover */
+}
+
