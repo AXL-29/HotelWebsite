@@ -12,7 +12,7 @@ body {
   align-items: center;
 }
 
-.logo img{
+.logo img {
   display: flex;
   position: relative;
   height: 50px;
@@ -85,4 +85,11 @@ body {
 
 .container > img {
   position: relative;
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
 }
