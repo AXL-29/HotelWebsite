@@ -3,32 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Quicksand:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>HotelWebsite</title>
+    <title>Hotel Website</title>
   </head>
   <body>
-    <section class="title">
-      <nav class="navbar">
-        <a href="#home" class="logo"><img src="./images/logo-icon.svg" alt="logo-icon"></a>
-        <ul class="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#services">Services</a></li>
-        </ul>
-        <a href="#contact_us" class="contact_us">Contact Us</a>
-      </nav>
+    <!-- Navbar -->
+    <header class="navbar">
+      <a href="#home" class="logo">
+        <img src="./images/logo-icon.svg" alt="Hotel Logo" />
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="menu desktop-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#services">Services</a></li>
+      </ul>
+
+      <a href="#contact_us" class="contact_us">Contact Us</a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Side Menu -->
+    <nav class="side-menu" id="sideMenu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact_us">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="container" id="home">
+      <img src="./images/title-bg.svg" alt="Resort Background" />
+      <h1>Relax. Recharge. Renew</h1>
+      <p>A sanctuary designed for balance, wellness, and pure relaxation.</p>
+      <button class="book-now-btn">Book Now</button>
     </section>
 
-    <div class="container">
-      <img src="./images/title-bg.svg" alt="title-bg">
-    </div>
+    <section class="container" id="about">
+      <h2>About Us</h2>
+      <p>
+        Welcome to our serene hotel, where tranquility meets luxury. Nestled
+        amidst breathtaking landscapes, our hotel offers a perfect escape from
+        the hustle and bustle of everyday life. Immerse yourself in the soothing
+        ambiance of our elegantly designed rooms, indulge in rejuvenating spa
+        treatments, and savor exquisite culinary delights crafted by our expert
+        chefs. Whether you're seeking a romantic getaway, a family vacation, or
+        a solo retreat, our dedicated staff is committed to providing you with
+        an unforgettable experience. Discover the perfect blend of comfort,
+        relaxation, and impeccable service at our hotel – your sanctuary away
+        from home.
+      </p>
+    </section>
+
     <script src="script.js"></script>
   </body>
 </html>

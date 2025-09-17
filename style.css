@@ -1,3 +1,4 @@
+/* ========== Reset & Base ========== */
 * {
   margin: 0;
   padding: 0;
@@ -6,90 +7,252 @@
 
 body {
   background-color: #e6e6e6;
-  font-family: "Lora", "Quicksand" sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: "Lora", "Quicksand", sans-serif;
+  color: #57422a;
 }
 
-.logo img {
-  display: flex;
-  position: relative;
-  height: 50px;
+html {
+  scroll-behavior: smooth;
 }
 
+/* ========== Navbar ========== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
-  border-bottom: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.01);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  border-bottom: 2px solid white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 50px;
-  z-index: 10;
+  padding: 10px 50px;
+  z-index: 1000;
 }
 
-.navbar > a {
-  text-decoration: none;
-  font-family: "Quicksand";
-  font-size: 1.05rem;
-  font-weight: bold;
-  color: #57422a;
+.logo img {
+  height: 50px;
 }
 
+/* Desktop Menu */
 .menu {
   list-style: none;
   display: flex;
-  justify-content: space-between;
-  gap: 50px;
+  gap: 40px;
 }
 
 .menu li a {
   text-decoration: none;
   font-family: "Quicksand";
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.2rem;
   color: #9b5527;
   position: relative;
-  transition: font-weight 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .menu li a:hover {
-  font-weight: 700;
-  color: #9b5527;
+  font-weight: 600;
+  color: #7c431f;
 }
 
-/* Create a custom underline */
 .menu li a::after {
   content: "";
   position: absolute;
-  left: 25%; /* center the underline */
-  bottom: 0;
-  width: 50%; /* half the width of the text */
-  height: 2px; /* thickness of the underline */
-  background-color: #9b5527;
+  left: 25%;
+  bottom: -3px;
+  width: 50%;
+  height: 2px;
+  background: #9b5527;
   transform: scaleX(0);
   transition: transform 0.3s ease;
-  transform-origin: center;
 }
 
 .menu li a:hover::after {
-  transform: scaleX(1); /* reveal the underline on hover */
+  transform: scaleX(1);
 }
+
+/* Contact Us */
+.contact_us {
+  text-decoration: none;
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #57422a;
+}
+
+/* ========== Hamburger ========== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #57422a;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ========== Side Menu ========== */
+/* ========== Side Menu (3D Floating) ========== */
+.side-menu {
+  position: fixed;
+  top: 80px; /* leave space under navbar */
+  right: 20px; /* gap from the right edge */
+  width: 250px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: -8px 12px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 25px 20px;
+  z-index: 1050;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Start hidden with 3D perspective */
+  transform: translateX(100%) scale(0.95) rotateY(-10deg);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+  transform-origin: right center;
+}
+
+.side-menu.show {
+  transform: translateX(0) scale(1) rotateY(0deg);
+  opacity: 1;
+}
+
+.side-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu a {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2rem;
+  color: #9b5527;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.side-menu a:hover {
+  color: #9b5527;
+  font-weight: 600;
+  transform: translateX(5px); /* subtle movement on hover */
+}
+
+/* ========== Hero Section ========== */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* move content upward */
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 230px; /* fine-tune how high */
+}
+
 
 .container > img {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-@media (max-width: 760px) {
-  .navbar {
+.container h1 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-family: "Lora", serif;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.container p {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  color: #57422a;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.book-now-btn {
+  padding: 12px 32px;
+  font-family: "Quicksand", sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.book-now-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* 📱 Mobile styles */
+@media (max-width: 768px) {
+  .desktop-menu,
+  .contact_us {
+    display: none;
+  }
+
+  .hamburger {
     display: flex;
-    flex-direction: column;
+  }
+}
+
+/* 💻 Desktop styles */
+@media (min-width: 769px) {
+  .desktop-menu,
+  .contact_us {
+    display: flex;
+  }
+
+  /* Hide side menu when resizing back */
+  .side-menu {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: none;
   }
 }
