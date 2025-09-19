@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover tranquility and luxury at our serene hotel. Perfect for romantic getaways, family vacations, or solo retreats."
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Quicksand:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -12,8 +16,8 @@
   </head>
   <body>
     <!-- Navbar -->
-    <header class="navbar">
-      <a href="#home" class="logo">
+    <nav class="navbar">
+      <a href="#home" class="logo" aria-label="Hotel Logo">
         <img src="./images/logo-icon.svg" alt="Hotel Logo" />
       </a>
 
@@ -25,16 +29,16 @@
         <li><a href="#services">Services</a></li>
       </ul>
 
-      <a href="#contact_us" class="contact_us">Contact Us</a>
+      <a href="#contact_us" class="contact_us" aria-label="Contact Us">Contact Us</a>
 
       <!-- Hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
-    </header>
+    </nav>
 
     <!-- Side Menu -->
-    <nav class="side-menu" id="sideMenu">
+    <nav class="side-menu" id="sideMenu" aria-label="Side Navigation Menu">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -46,12 +50,17 @@
 
     <!-- Home Section -->
     <section class="container" id="home">
-      <img src="./images/title-bg.svg" alt="Resort Background" />
+      <img
+        src="./images/title-bg.svg"
+        alt="Resort Background"
+        loading="lazy"
+      />
       <h1>Relax. Recharge. Renew</h1>
       <p>A sanctuary designed for balance, wellness, and pure relaxation.</p>
-      <button class="book-now-btn">Book Now</button>
+      <button class="book-now-btn" aria-label="Book Now">Book Now</button>
     </section>
 
+    <!-- About Section -->
     <section class="container" id="about">
       <h2>About Us</h2>
       <p>
@@ -68,6 +77,6 @@
       </p>
     </section>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
